@@ -1,4 +1,4 @@
-# Bus travel Times
-** Sean McGrath **
+#Bus travel Times
+**Sean McGrath**
 
-# Intruduction
+#Introduction
