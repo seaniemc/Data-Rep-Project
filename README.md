@@ -3,7 +3,7 @@
 
 #Introduction
 ```java
-int banna = 12;
+int bannana = 12;
 
 for(int i = 0; i <= bannana; i++)
 ```
