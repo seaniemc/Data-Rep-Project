@@ -14,12 +14,18 @@ The data set comes in the form of CSV files and was downloaded from the <http://
 
 |Columns |Rows   |
 |:------:|:-----:|
-|Id        | 1      |
-| Location       |  Roundstone     |
-|        |       |
-|        |       |
-|        |       |
-|        |       |
+|"Id" | The id given to each playground |
+|"Location_o"|Location of playground|
+|"Area_" |Area of gounty eg: West Galway - Conamara|
+|"Managed_By"| Eg: Roundstone Playground Committee|
+|"Playground" | Eg: Roundstone Village, Connemara |
+|"AGE_GROUP" |Age profile of users Eg: 0 to 16 years     |
+|"List_of_Eq" |List of Equipment Eg: Climber and Slide, Climber with Rope|
+|"Liosta_Tre" |List of Equipment in Irish Eg: Dreapadóir le Sleamhnán |
+|"List_of_00" | |
+| | |
+| | |
+
 
 ```java
 
