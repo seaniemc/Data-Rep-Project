@@ -37,22 +37,22 @@ Below you will see a sample of the data from the CSV file represented in JSON fo
     "PARKING":"YES"
   },
 ```
-##Accessing The Data Set Through The API
-Accessing the data set is done through the HTTP prtocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely Hood of a Playground been deleted is slim.
+
+
+##Accessing the data set is done through the HTTP protocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely hood of a Playground been deleted is slim.
 
 ##URL Design
 
-In the case where someone wants to acess the data and get a read only copy back, the GET method will be used. The data will be returned in JSON format.  
+####Retriving With The GET Method
+To get a read only copy from the data set, the GET method will be used. The data will be returned in JSON format.  
 http://www.galwayplaygrounds.ie/en/playgrounds/all  
-This will return all the parks in the data set in a JSON Array.
+The above URL will return all the parks in the data set in a JSON Array.  
 
-With the HTTP protocol we can use paramatorised quries, to get back more specific results from our data. In the URL below the /parking segment details the particular field which you want use as a paramtuer in the result of the query. The /yes segement details the value for which the result should return.  
-
-http://www.galwayplaygrounds.ie/en/playgrounds/parking/[Yes/No]   
-http://www.galwayplaygrounds.ie/en/playgrounds/parking/yes   
-
-When this HTTP request is ran it will return a result set of all the parks with parking.  
-Below is an example of the JSON returned by the HTTP request.
+HTTP protocol allows the use of parameterised queries, to get more specific results from our data. In the URL below the /parking segment details the particular field which will be used as a parameter in the result of the query. The /yes segment details the value for which the result should return.  
+http://www.galwayplaygrounds.ie/en/playgrounds/parking/[Yes/No]  
+http://www.galwayplaygrounds.ie/en/playgrounds/parking/yes  
+The HTTP request above will return a result set of all the parks with parking.  
+Below is an example of the JSON returned by the HTTP request?  
 
 ```json
 {
@@ -97,29 +97,33 @@ Below is an example of the JSON returned by the HTTP request.
   },
 
 ```
-####Using Filters To Query Data 
+####Using Filters to Query Data 
 
 We can use filters to return the exact data which is needed. We first set the filter using a field (i.e "List_of_Eq") from the data set. Then set the parameter (i.e Seesaw).  
 http://galwayplaygrounds.ie/en/playgrounds/?[filter]=[parameter]  
 http://galwayplaygrounds.ie/en/playgrounds/?list_of_eq=seesaw  
-This will return JSON formated objects, which have a Seesaw listed in the "List_of_Eq" section. 
+This will return JSON formated objects, which have a Seesaw listed in the "List_of_Eq" section.
 
-####Update With The PUT Method
+
+####Update with the PUT Method
+
 We can use the PUT method to update the data set.
 http://www.galwayplaygrounds.ie/playgrounds/update?objectid=[id]&field=[field]&values=[value]  
 http://www.galwayplaygrounds.ie/playgrounds/update?objectid=[50]&field=[PUBLIC_TOI]&values=[YES]  
 
 This will change value of the field "PUBLIC_TOI" from "NO" to "YES", in the object with the ID of 50.
 
-#####Add With The POST Method
+####Add with the POST Method
+
 We can use the POST method to add a new entry to the data set.  
+
 PUT /en/playgrounds.html HTTP/1.1  
 HOST: www.galwayplaygrounds.ie  
 Connection: Keep-Alive  
 Content-type: text/html  
 x=-987451&y=741258&id=64&Location_o=Renvyle&Area_=WestGalway-Conamara............etc
 
-
+The above request will add a new entry to data set with an ID of 64.
 
 
 
