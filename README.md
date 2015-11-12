@@ -1,14 +1,14 @@
-#Data Representation Project
-*Author: Sean McGrath*
+#County Galway Playgrounds API
+##Data Representation Project
+###Author: Sean McGrath
 
-#Playgrounds County Galway API*
 ##Introduction
 
 This document will outline the design and documentation for the data set, Playgrounds County Galway. The data is available at <http://data.gov.ie> and comes in CSV files format, which can be easily convert into JSON files. The API can be used as part of a web application, which could create, update and delete information about playgrounds through out the county of Galway. 
 
 ##About the data
 
-The data set comes in the form of CSV files which was downloaded from the http://data.gov.ie website. In order to make the data set more accessible, it will be converted into JSON. The data set has 16 fields and 63 entries. I will only use 14 fields, as there is 2 field which I feel there would be no benefit in using it. The field FID contains the identical data as the ID column and the PHOTO field contains links to external websites, but the links no longer work. There is also another slight duplication with the fields List_of_Eq, which lists the equipment in English and Liosta_Tre which lists the equipment in Gailge.
+The data set comes in the form of CSV files which was downloaded from the http://data.gov.ie website. In order to make the data set more accessible, it will be converted into JSON. The data set has 16 fields and 63 entries. I will only use 14 fields, as there is 2 field which I feel there would be no benefit in using. The field FID, contains identical data to that of the ID column and the PHOTO field contains links to external websites, but the links no longer work. There is also another slight duplication with the fields List_of_Eq, which lists the equipment in English and Liosta_Tre which lists the equipment in Gailge.
 
 ##Columns and Rows.
 
@@ -32,8 +32,8 @@ The data set comes in the form of CSV files which was downloaded from the http:/
 ##Sample of Data in JSON Format.
 
 Below you will see a sample of the data from the CSV file represented in JSON form. Take note of the headings and the correspondent data associated with each heading.
-```json
 
+```json
  {
     "X":-1104192,
     "Y":7056858,
@@ -51,3 +51,4 @@ Below you will see a sample of the data from the CSV file represented in JSON fo
     "PARKING":"YES"
   },
 ```
+
