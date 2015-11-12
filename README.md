@@ -39,7 +39,7 @@ Below you will see a sample of the data from the CSV file represented in JSON fo
 ```
 
 
-##Accessing the data set is done through the HTTP protocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely hood of a Playground been deleted is slim.
+Accessing the data set is done through the HTTP protocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely hood of a Playground been deleted is slim.
 
 ##URL Design
 
