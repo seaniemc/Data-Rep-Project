@@ -23,8 +23,9 @@ The data set comes in the form of CSV files which was downloaded from the http:/
 |"List_of_Eq" |List of Equipment Eg: Climber and Slide, Climber with Rope|
 |"Liosta_Tre" |List of Equipment in Irish Eg: Dreapadóir le Sleamhnán |
 |"List_of_00" |Lists equipment suitable for small children Eg: Toddler swings |
-| | |
-| | |
+|"PUBLIC_TOI"|Yes/No |
+|"OPENING_HO"|Eg: Daylight Hours |
+|"PARKING"| Yes/No |
 
 
 ```java
