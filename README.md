@@ -14,22 +14,6 @@ The data set comes in the form of CSV files which was downloaded from the http:/
 
 ##Columns and Rows.
 
-|Columns |Rows   |
-|:------:|:-----:|
-|X |The X position on the map Eg: -1104192 |
-|Y |The Y position on the map Eg: 7056858|
-|"Id" | The Id given to each playground |
-|"Location_o"|Location of playground|
-|"Area_" |Area of county Eg: West Galway - Connemara|
-|"Managed_By"| Eg: Roundstone Playground Committee|
-|"Playground" | Eg: Roundstone Village, Connemara |
-|"AGE_GROUP" |Age profile of users Eg: 0 to 16 years     |
-|"List_of_Eq" |List of Equipment Eg: Climber and Slide, Climber with Rope|
-|"Liosta_Tre" |List of Equipment in Irish Eg: Dreapadóir le Sleamhnán |
-|"List_of_00" |Lists equipment suitable for small children Eg: Toddler swings |
-|"PUBLIC_TOI"|Yes/No |
-|"OPENING_HO"|Eg: Daylight Hours |
-|"PARKING"| Yes/No |
 
 ##Sample of Data in JSON Format.
 
@@ -59,12 +43,14 @@ Accessing the data set is done through the HTTP prtocol, using the GET, PUT and 
 ##URL Design
 
 In the case where someone wants to acess the data and get a read only copy back, the GET method will be used. The data will be returned in JSON format.  
-http://www.galwayplaygrounds.ie/playgrounds/all  
+http://www.galwayplaygrounds.ie/en/playgrounds/all  
 This will return all the parks in the data set in a JSON Array.
 
-With the HTTP protocol we can use paramatorised quries, to get back more specific results from our data. In the URL below the /parking segment details the particular field which you want use as a paramtuer in the result of the query. The /yes segement details the value for which the result should return.
-http://www.galwayplaygrounds.ie/playgrounds/parking/[Yes/No]   
-http://www.galwayplaygrounds.ie/playgrounds/parking/yes  
+With the HTTP protocol we can use paramatorised quries, to get back more specific results from our data. In the URL below the /parking segment details the particular field which you want use as a paramtuer in the result of the query. The /yes segement details the value for which the result should return.  
+
+http://www.galwayplaygrounds.ie/en/playgrounds/parking/[Yes/No]   
+http://www.galwayplaygrounds.ie/en/playgrounds/parking/yes   
+
 When this HTTP request is ran it will return a result set of all the parks with parking.  
 Below is an example of the JSON returned by the HTTP request.
 
@@ -87,8 +73,8 @@ Below is an example of the JSON returned by the HTTP request.
   },
 
 ```
-http://www.galwayplaygrounds.ie/playgrounds/area/[Name of area]   
-http://www.galwayplaygrounds.ie/playgrounds/area/north-galway-tuam  
+http://www.galwayplaygrounds.ie/en/playgrounds/area/[Name of area]   
+http://www.galwayplaygrounds.ie/en/playgrounds/area/north-galway-tuam  
 When this HTTP request is ran it will return a result set of all the parks from the Area Noth Galway -Tuam.  
 Below is an example of the JSON returned by the HTTP request.
 
@@ -111,9 +97,27 @@ Below is an example of the JSON returned by the HTTP request.
   },
 
 ```
+####Using Filters To Query Data 
 
+We can use filters to return the exact data which is needed. We first set the filter using a field (i.e "List_of_Eq") from the data set. Then set the parameter (i.e Seesaw).  
+http://galwayplaygrounds.ie/en/playgrounds/?[filter]=[parameter]  
+http://galwayplaygrounds.ie/en/playgrounds/?list_of_eq=seesaw  
+This will return JSON formated objects, which have a Seesaw listed in the "List_of_Eq" section. 
 
+####Update With The PUT Method
+We can use the PUT method to update the data set.
+http://www.galwayplaygrounds.ie/playgrounds/update?objectid=[id]&field=[field]&values=[value]  
+http://www.galwayplaygrounds.ie/playgrounds/update?objectid=[50]&field=[PUBLIC_TOI]&values=[YES]  
 
+This will change value of the field "PUBLIC_TOI" from "NO" to "YES", in the object with the ID of 50.
+
+#####Add With The POST Method
+We can use the POST method to add a new entry to the data set.  
+PUT /en/playgrounds.html HTTP/1.1  
+HOST: www.galwayplaygrounds.ie  
+Connection: Keep-Alive  
+Content-type: text/html  
+x=-987451&y=741258&id=64&Location_o=Renvyle&Area_=WestGalway-Conamara............etc
 
 
 
