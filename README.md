@@ -56,13 +56,13 @@ Below you will see a sample of the data from the CSV file represented in JSON fo
 ##Accessing The Data Set Through The API
 Accessing the data set is done through the HTTP prtocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely Hood of a Playground been deleted is slim.
 
-##Url Design
+##URL Design
 
 In the case where someone wants to acess the data and get a read only copy back, the GET method will be used. The data will be returned in JSON format.  
 http://www.galwayplaygrounds.ie/playgrounds/all  
 This will return all the parks in the data set in a JSON Array.
 
-With the HTTP protocol we can use paramatorised quries, to get back more specific results in our data.  
+With the HTTP protocol we can use paramatorised quries, to get back more specific results from our data. In the URL below the /parking segment details the particular field which you want use as a paramtuer in the result of the query. The /yes segement details the value for which the result should return.
 http://www.galwayplaygrounds.ie/playgrounds/parking/[Yes/No]   
 http://www.galwayplaygrounds.ie/playgrounds/parking/yes  
 When this HTTP request is ran it will return a result set of all the parks with parking.  
@@ -86,7 +86,32 @@ Below is an example of the JSON returned by the HTTP request.
     "PARKING":"YES"
   },
 
-````
+```
+http://www.galwayplaygrounds.ie/playgrounds/area/[Name of area]   
+http://www.galwayplaygrounds.ie/playgrounds/area/north-galway-tuam  
+When this HTTP request is ran it will return a result set of all the parks from the Area Noth Galway -Tuam.  
+Below is an example of the JSON returned by the HTTP request.
+
+```json
+{
+    "X":-946083,
+    "Y":7070276,
+    "ID":13,
+    "Location_o":"Mountbellew (An Creagán)",
+    "Area_":"North Galway - Tuam",
+    "Managed_By":"Mountbellew Community Playground",
+    "Playground":"GAA Pitch, Tuam Road",
+    "AGE_GROUP":"0 to 12 years",
+    "List_of_Eq":"Cableway, Mobilus, Junior Multiplay Unit, Seesaw, Embankment Tube Slide, Cradle Swings, Flat Seat Swings, Basket Swing, Jeep Spring Unit, Spring Seesaw, Toddler Multiplay Unit, Pedal Roundabout,  4 Seat Springer and Car Springer",
+    "Liosta_Tre":"Rúidchosán Cábla, Mobilus, Aonad Ilspraoi Sóisearach, Maide Corrach, Sleamhnán, Luascáin, Luascán Cothrom, Ciseán Luascadh, Aonad Ilspraoi Lapadáin, Timpeallán, srl.",
+    "List_of_00":"Swinging Basket & Play Jeep",
+    "PUBLIC_TOI":"No",
+    "OPENING_HO":"09.00 to 8.30 (Summer) 09.00 to 5.00 (Winter)",
+    "PARKING":"YES"
+  },
+
+```
+
 
 
 
