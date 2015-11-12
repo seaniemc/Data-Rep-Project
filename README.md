@@ -1,6 +1,8 @@
 #County Galway Playgrounds API
+
 ##Data Representation Project
-###Author: Sean McGrath
+
+####Author: Sean McGrath
 
 ##Introduction
 
@@ -51,4 +53,48 @@ Below you will see a sample of the data from the CSV file represented in JSON fo
     "PARKING":"YES"
   },
 ```
+##Accessing The Data Set Through The API
+Accessing the data set is done through the HTTP prtocol, using the GET, PUT and POST method. I will not allow the use of the DELETE Method as the likely Hood of a Playground been deleted is slim.
+
+##Url Design
+
+In the case where someone wants to acess the data and get a read only copy back, the GET method will be used. The data will be returned in JSON format.  
+http://www.galwayplaygrounds.ie/playgrounds/all  
+This will return all the parks in the data set in a JSON Array.
+
+With the HTTP protocol we can use paramatorised quries, to get back more specific results in our data.  
+http://www.galwayplaygrounds.ie/playgrounds/parking/[Yes/No]   
+http://www.galwayplaygrounds.ie/playgrounds/parking/yes  
+When this HTTP request is ran it will return a result set of all the parks with parking.  
+Below is an example of the JSON returned by the HTTP request.
+
+```json
+{
+    "X":-1115105,
+    "Y":7074415,
+    "ID":29,
+    "Location_o":"Clifden (An Clochán)",
+    "Area_":"West Galway - Conamara",
+    "Managed_By":"Clifden Playground",
+    "Playground":"Beach Road, Clifden",
+    "AGE_GROUP":"0-12 Years",
+    "List_of_Eq":"Boat, Three Way Spring Rocker, Spinning Bowl, Super Nova, Crazy Goose Rocker, Crazy Hen,     Swings, Basket Swings, Swings, Cable Runway",
+    "Liosta_Tre":"Bád, Luascaire Sprionga,  Babhla Rothalithe, Luascáin, Ciseán Luascadh, Rúíidchosán Cábhla",
+    "List_of_00":"None specified.",
+    "PUBLIC_TOI":"No",
+    "OPENING_HO":"Daylight Hours",
+    "PARKING":"YES"
+  },
+
+````
+
+
+
+
+
+
+
+
+
+
 
