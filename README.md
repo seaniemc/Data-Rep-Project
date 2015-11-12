@@ -8,7 +8,7 @@ This document will outline the design and documentation for the data set, Playgr
 
 ##About the data
 
-The data set comes in the form of CSV files and was downloaded from the <http://data.gov.ie>. It has 63 entries and has 16 columns. In order to make the data set more accessable, it will be converted into JSON. 
+The data set comes in the form of CSV files which was downloaded from the http://data.gov.ie website. In order to make the data set more accessible, it will be converted into JSON. The data set has 16 fields and 63 entries. I will only use 14 fields, as there is 2 field which I feel there would be no benefit in using it. The field FID contains the identical data as the ID column and the PHOTO field contains links to external websites, but the links no longer work. There is also another slight duplication with the fields List_of_Eq, which lists the equipment in English and Liosta_Tre which lists the equipment in Gailge.
 
 ##Columns and Rows.
 
@@ -22,7 +22,7 @@ The data set comes in the form of CSV files and was downloaded from the <http://
 |"AGE_GROUP" |Age profile of users Eg: 0 to 16 years     |
 |"List_of_Eq" |List of Equipment Eg: Climber and Slide, Climber with Rope|
 |"Liosta_Tre" |List of Equipment in Irish Eg: Dreapadóir le Sleamhnán |
-|"List_of_00" | |
+|"List_of_00" |Lists equipment suitable for small children Eg: Toddler swings |
 | | |
 | | |
 
